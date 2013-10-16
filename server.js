@@ -1,14 +1,15 @@
 var forever = require('forever-monitor')
   , Monitor = forever.Monitor
   , child = new Monitor('cluster.js', {
-    max: 10,
-    silent: true,
-    killTree: true,
-    logFile: 'forever.log',
-    outFile: 'app.log',
-    errFile: 'error.log'
+      max: 10
+    , silent: true
+    , killTree: true
+    , logFile: 'forever.log'
+    , outFile: 'app.log'
+    , errFile: 'error.log'
   });
 
+console.log(child)
 child.on('exit', function() {
   console.log('Sever is halted');
 });
